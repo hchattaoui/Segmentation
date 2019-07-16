@@ -40,7 +40,6 @@ def filter_frame(img_rgb):
     ret,thresh_image = cv2.threshold(equalize,0,255,cv2.THRESH_OTSU+cv2.THRESH_BINARY)
     equalize= cv2.equalizeHist(thresh_image)
     
-    mask = np.zeros(img_rgb.shape,np.uint8)
     new_image = cv2.bitwise_and(img_rgb, img_rgb, mask = equalize)
     
     return new_image
